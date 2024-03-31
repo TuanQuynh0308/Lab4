@@ -107,7 +107,9 @@ android {
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
+    implementation project(':react-native-vector-icons')
     implementation("com.facebook.react:flipper-integration")
+    implementation project(':react-native-reanimated')
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
@@ -117,3 +119,57 @@ dependencies {
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
+project.ext.vectoricons = [
+    iconFontNames: [ 'MaterialIcons.ttf', 'EvilIcons.ttf','FontAwesome.ttf' ] // Specify font files
+]
+
+apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
+
+// if (isNaN(ngaySinh)) {
+//     Alert.alert("Ngày sinh phải là số");
+//     return;
+//   }
+
+// if (hoTen.length < 5 || hoTen.length > 20) {
+//     Alert.alert("Họ tên phải có từ 5 đến 20 kí tự");
+//     return;
+//   }
+
+// const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+//   if (!emailRegex.test(email)) {
+//     Alert.alert("Email không hợp lệ");
+//     return;
+//   }
+
+///^[0-9]{10}$/
+
+// import { StyleSheet, Text, View } from 'react-native'
+// import React from 'react'
+// import 'react-native-gesture-handler'
+// import { createNativeStackNavigator } from '@react-navigation/native-stack'
+// import { SafeAreaView } from 'react-native-safe-area-context'
+// import { NavigationContainer } from '@react-navigation/native'
+// import { Create, Edit, Home, Welcome } from './screens'
+
+
+// const Stack = createNativeStackNavigator();
+
+// function App(): JSX.Element{
+//   return(
+//       <SafeAreaView style={{flex: 1}} >
+//           <NavigationContainer >
+//               <Stack.Navigator initialRouteName='Welcome'>
+//                 <Stack.Screen name='Welcome' component={Welcome} options={{headerShown: false}}/>
+//                 <Stack.Screen name='Home' component={Home} options={{headerShown: false}}/>
+//                 <Stack.Screen name='Create' component={Create} options={{headerShown: false}}/>
+//                 <Stack.Screen name='Edit' component={Edit} options={{headerShown: false}}/>
+//               </Stack.Navigator>
+//           </NavigationContainer>
+//       </SafeAreaView>
+//   )
+// }
+
+// export default App
+
+// const styles = StyleSheet.create({})
